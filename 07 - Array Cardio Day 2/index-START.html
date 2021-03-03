@@ -26,16 +26,42 @@
 
     // Some and Every Checks
     // Array.prototype.some() // is at least one person 19 or older?
-    // Array.prototype.every() // is everyone 19 or older?
+    // 只要任何一筆符合 就會回傳布林值
+   const ans = people.some(p=>{
+      return new Date().getUTCFullYear() - p.year >=19
+    });
 
+    console.log(ans);
+
+    // Array.prototype.every() // is everyone 19 or older?
+//  必須每筆都通過
+    const ans1 = people.every(p=>{
+      return new Date().getUTCFullYear() - p.year >=19
+    });
+
+    console.log(ans1);
     // Array.prototype.find()
     // Find is like filter, but instead returns just the one you are looking for
     // find the comment with the ID of 823423
+    const ans2 = comments.find(comment => comment.id === 823423);
 
+    console.log(ans2)
     // Array.prototype.findIndex()
+    const ans3 = comments.findIndex(comment => comment.id === 823423);
+
+console.log(ans3)
     // Find the comment with this ID
     // delete the comment with the ID of 823423
+// comments.splice(ans3,1);
+    
+// console.log(comments)
 
+
+const ans5 = comments.slice(0,ans3)
+const ans6 = comments.slice(ans3 + 1)
+
+const ans7 = [...ans5, ...ans6];
+console.log(ans7, comments);
   </script>
 </body>
 </html>
