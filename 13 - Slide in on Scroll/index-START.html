@@ -58,6 +58,22 @@
       };
     }
 
+    let images = document.querySelectorAll("img");
+    function scorllHandler(){ 
+
+      let windowTop = window.scrollY;
+      let windowBottom = windowTop + window.innerHeight;
+      
+      images.forEach(img => {
+        if (img.offsetTop + img.height / 2 <  windowBottom ) {
+            img.classList.add("active");
+      }
+      });   
+    }
+
+
+    window.addEventListener("scroll", scorllHandler);
+
   </script>
 
   <style>
