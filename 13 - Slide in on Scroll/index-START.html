@@ -65,8 +65,11 @@
       let windowBottom = windowTop + window.innerHeight;
       
       images.forEach(img => {
-        if (img.offsetTop + img.height / 2 <  windowBottom ) {
+        let imgMiddle = img.offsetTop + img.height / 2
+        if (imgMiddle <  windowBottom && imgMiddle >windowTop ) {
             img.classList.add("active");
+      }else {
+        img.classList.remove("active");
       }
       });   
     }
