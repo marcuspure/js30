@@ -35,6 +35,34 @@
   </style>
 
 <script>
+  (function(){
+    let text = document.querySelector('h1')
+    let length = 100
+    document
+    .querySelector(".hero")
+    .addEventListener('mousemove',function(e) {
+      
+      let { offsetX,offsetY} = e;
+
+      if (e.target !== this){
+        offsetX += e.target.offsetLeft;
+        offsetY += e.target.offsetTop;
+      }
+
+      
+      let lengthX =  Math.round (offsetX / this.offsetWidth * length)*2 - length ;
+      let lengthY = Math.round (offsetY / this.offsetHeight * length)*2 - length ;
+     
+      text.style.textShadow = `
+      ${lengthX * -1}px ${lengthY * -1 }px 5px rgba(255,0,0,0.7),
+      ${lengthX * -6}px ${lengthY * -6 }px 5px rgba(0,255,0,0.7),
+      ${lengthX * -10}px ${lengthY * -10 }px 5px rgba(0,0,255,0.7)`;
+
+
+
+    });
+  })();
+  
 </script>
 </body>
 </html>
