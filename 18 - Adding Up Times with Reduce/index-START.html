@@ -182,7 +182,7 @@
     </li>
   </ul>
 <script>
-  (function(){
+  // (function(){
     let li = document.querySelectorAll('li')
     
     let a = [...li]
@@ -194,15 +194,16 @@
     .reduce((prev, next) => prev + next,0);
     console.log(a)
 
-let sec = a % 60;
-let min = (a- sec)/ 60;
-let hour = Math.floor(min / 60);
-min %= 60;
+// let sec = a % 60;
+// let min = (a- sec)/ 60;
+// let hour = Math.floor(min / 60);
+// min %= 60;
+let hour = Math.floor(a/3600);
+console.log(hour)
+// console.log(`${hour}:${min}:${sec}`);
 
-console.log(`${hour}:${min}:${sec}`);
 
-
-  })();
+  // })();
 
 </script>
 </body>
