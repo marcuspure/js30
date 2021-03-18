@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -12,7 +12,9 @@
 <script>
   window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
-
+  const recognition = new SpeechRecognition();
+  recognition.interimResults = true;
+  recognition.lang = 'zh-TW';
 </script>
 
 
