@@ -6,8 +6,9 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+  <span class= "highlight"></span>
     <nav>
+     
       <ul class="menu">
         <li><a href="">Home</a></li>
         <li><a href="">Order Status</a></li>
@@ -26,7 +27,29 @@
     </div>
 
   <script>
-    // 👀👀👀👀👀👀👀👀👀👀👀👀👀👀👀
+    
+    let target = document.querySelectorAll('a');
+    let highlight = document.querySelector('.highlight');
+    highlight.style.display = 'none';
+
+    function enterHandler(){
+      let {top, left, width, height } = this.getBoundingClientRect();
+      console.log(top,left,width,height);
+
+      highlight.style.display = "";
+      
+      highlight.style.width = width + "px";
+      highlight.style.height = height + "px";
+      highlight.style.top = top + "px";
+      highlight.style.left = left + "px";
+
+    }
+
+    target.forEach((e)=>{
+      e.addEventListener('mouseenter', enterHandler);
+    });
+
+  
   </script>
 </body>
 </html>

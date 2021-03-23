@@ -58,7 +58,7 @@
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
 <script>
-  (function(){
+  ;(function(){
 
     function playHandler(e){
      const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`)
@@ -66,7 +66,6 @@
         audio.currentTime = 0
         audio.play()
       } 
- 
      const dom = document.querySelector(`div[data-key="${e.keyCode}"]`)
       if(dom) dom.classList.add('playing')
     }
@@ -81,7 +80,6 @@
       key.addEventListener('transitionend',transitionendHandler)
      }) 
 
-     
   })()
 </script>
 

@@ -223,7 +223,7 @@
 const menus = document.querySelectorAll('.cool > li')
 const dropdownBackground = document.querySelector('.dropdownBackground');
 
-function enterHandler() {
+function enterHandler() {  
   this.classList.add('trigger-enter');
   setTimeout(()=> {
     this.classList.contains('trigger-enter') && this.classList.add('trigger-enter-active');

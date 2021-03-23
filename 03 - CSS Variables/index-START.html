@@ -25,6 +25,12 @@
     /*
       misc styles, nothing to do with CSS variables
     */
+    /* //局部CSS變數宣告 */
+    :root {
+    --spacing: 10px;
+    --blur: 10px;
+    --color: #ffc600;
+    }
 
     body {
       text-align: center;
@@ -42,9 +48,35 @@
     input {
       width: 100px;
     }
+
+    img {
+      border: var(--spacing) solid;
+      border-color: var(--color);
+      filter: blur(var(--blur));
+}
+
+.hl {
+    color: var(--color);
+}
   </style>
 
   <script>
+  document.getElementById('spacing').addEventListener('input', widthChange);
+  document.getElementById('blur').addEventListener('input', imgBlur);
+  document.getElementById('base').addEventListener('input', colorChange);
+
+   function widthChange (event) {
+    let newWidth = event.target.value;
+    document.documentElement.style.setProperty('--spacing', `${newWidth}px`);
+};
+function imgBlur(event) {
+    let newBlur = event.target.value;
+     document.documentElement.style.setProperty('--blur', `${newBlur}px`);
+};
+function colorChange (event) {
+    let newColor = event.target.value;
+    document.documentElement.style.setProperty('--color', `${newColor}`);
+};
   </script>
 
 </body>
