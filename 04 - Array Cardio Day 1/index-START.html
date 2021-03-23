@@ -77,13 +77,27 @@
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
+    // let ans  = people.sort((a,b)=>{
+    //   let [aFirst,aLast] = a.split(',')
+    //   let [bFirst,bLast] = a.split(',')
 
+    //   return aLast > bLast ? 1 : bLast >aLast ? -1 : 0 
+    // })
 
 
     // 8. Reduce Exercise
     // Sum up the instances of each of these
     const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck' ];
 
+
+    const ans = data.reduce((obj,content)=>{
+      if(!obj[content]) obj[content] = 1
+      else  obj[content] += 1
+
+      return obj
+    },{})  
+
+    console.table(ans)
   </script>
 </body>
 </html>
