@@ -16,9 +16,10 @@ const startTimer = function(sec) {
       const disMin = Math.floor(secLeft / 60);
       const disSec = secLeft % 60;
       timeLeft.innerText = `${disMin} : ${disSec}`;
-    }else
+    }else{
+    timeLeft.innerText = `time!`;
      clearInterval(timer);
-    
+    }
   },16);//每秒更新60次
   //顯示最後時間
   const endDate = new Date(end);
